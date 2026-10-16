@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: page
 title: Publications
-permalink: /publications/
+permalink: /publications.html
 ---
 
 # Publications & Research Team

@@ -1,0 +1,216 @@
+---
+
+#  Front matter required for GitHub Pages Minima
+---
+
+@import "minima";
+
+:root, html[data-theme="light"] {
+  --bg-page: #f6f8fa;
+  --bg-card: #ffffff;
+  --bg-header: #ffffff;
+  --text-primary: #1f2328;
+  --text-heading: #0f172a;
+  --text-muted: #57606a;
+  --link-color: #0969da;
+  --border-color: #d0d7de;
+  --tab-hover-bg: #f3f4f6;
+  --tab-active-bg: #e2e8f0;
+  --tab-active-text: #0f172a;
+  --code-inline-bg: #eff1f3;
+  --code-block-bg: #1e293b;
+  --code-block-text: #f8fafc;
+  --table-header-bg: #f6f8fa;
+  --table-Row-alt: #f8fafc;
+  --quote-bg: #fff8c5;
+  --quote-border: #d4a72c;
+  --quote-text: #1f2328;
+}
+
+html[data-theme="dark"] {
+  --bg-page: #0d1117;
+  --bg-card: #161b22;
+  --bg-header: #161b22;
+  --text-primary: #e6edf3;
+  --text-heading: #f0f6fc;
+  --text-muted: #8b949e;
+  --link-color: #58a6ff;
+  --border-color: #30363d;
+  --tab-hover-bg: #21262d;
+  --tab-active-bg: #30363d;
+  --tab-active-text: #ffffff;
+  --code-inline-bg: #2d333b;
+  --code-block-bg: #0d1117;
+  --code-block-text: #e6edf3;
+  --table-header-bg: #21262d;
+  --table-Row-alt: #1c2128;
+  --quote-bg: rgba(187, 128, 9, 0.15);
+  --quote-border: #d29922;
+  --quote-text: #e6edf3;
+}
+
+body {
+  background-color: var(--bg-page) !important;
+  color: var(--text-primary) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+}
+
+.site-header {
+  background-color: var(--bg-header) !important;
+  border-top: none !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-flex {
+  max-width: 1020px;
+}
+
+.site-title, .site-title:visited {
+  color: var(--text-heading) !important;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.site-nav .page-link {
+  color: var(--text-muted) !important;
+  padding: 6px 12px;
+  margin-left: 4px !important;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none !important;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.site-nav .page-link:hover {
+  background-color: var(--tab-hover-bg);
+  color: var(--text-heading) !important;
+}
+
+.site-nav .page-link.active-tab {
+  background-color: var(--tab-active-bg) !important;
+  color: var(--tab-active-text) !important;
+  font-weight: 600;
+}
+
+.theme-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.post-header {
+  display: none;
+}
+
+.page-content .wrapper {
+  max-width: 960px;
+  background-color: var(--bg-card);
+  padding: 36px 44px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading) !important;
+  font-weight: 600;
+}
+
+h1 {
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+h2 {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 6px;
+  margin-top: 28px;
+}
+
+p, li, td {
+  color: var(--text-primary) !important;
+}
+
+a, a:visited {
+  color: var(--link-color);
+}
+
+code {
+  background-color: var(--code-inline-bg) !important;
+  color: var(--text-heading) !important;
+  border: none !important;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+pre, .highlight pre {
+  background-color: var(--code-block-bg) !important;
+  color: var(--code-block-text) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px;
+  padding: 14px 16px !important;
+}
+
+pre code {
+  background-color: transparent !important;
+  color: var(--code-block-text) !important;
+  padding: 0;
+}
+
+blockquote {
+  background-color: var(--quote-bg);
+  border-left: 4px solid var(--quote-border);
+  color: var(--quote-text) !important;
+  padding: 12px 16px;
+  border-radius: 0 6px 6px 0;
+  font-style: normal;
+  letter-spacing: normal;
+}
+
+blockquote p {
+  color: var(--quote-text) !important;
+  margin-bottom: 0;
+}
+
+table {
+  border: 1px solid var(--border-color);
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+table th {
+  background-color: var(--table-header-bg) !important;
+  color: var(--text-heading) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+table td {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+table tr:nth-child(even) td {
+  background-color: var(--table-Row-alt) !important;
+}
+
+img {
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  margin: 12px 0;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border-color) !important;
+  background-color: var(--bg-header);
+  color: var(--text-muted);
+}

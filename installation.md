@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: page
 title: Installation
-permalink: /installation/
+permalink: /installation.html
 ---
 
 # Installation, Toolchain Build & Usage Guide

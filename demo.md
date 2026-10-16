@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: page
 title: Demo
-permalink: /demo/
+permalink: /demo.html
 ---
 
 # Tool Demonstration & Empirical Evaluation
