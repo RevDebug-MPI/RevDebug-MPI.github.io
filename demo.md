@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Tool Demonstration
 permalink: /demo.html
 ---

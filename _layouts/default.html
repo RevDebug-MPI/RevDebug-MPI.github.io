@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown.min.css">
+    <style>
+        :root {
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --nav-bg: #0f172a;
+            --nav-text: #94a3b8;
+            --active-tab-bg: #334155;
+            --active-tab-text: #ffffff;
+            --primary: #2563eb;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1e293b;
+        }
+
+        header {
+            background-color: var(--nav-bg);
+            color: white;
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #f8fafc;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 6px;
+        }
+
+        nav a {
+            color: var(--nav-text);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        nav a.active {
+            background-color: var(--active-tab-bg);
+            color: var(--active-tab-text);
+            font-weight: 600;
+        }
+
+        main {
+            max-width: 1050px;
+            margin: 35px auto 60px auto;
+            padding: 0 20px;
+        }
+
+        .content-box {
+            background: var(--card-bg);
+            padding: 45px 55px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2e8f0;
+        }
+
+        .markdown-body pre {
+            background-color: #0f172a !important;
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid #1e293b;
+        }
+
+        .markdown-body img {
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #cbd5e1;
+            margin: 15px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="{{ '/' | relative_url }}" class="brand">RevDebug-MPI</a>
+        <nav>
+            <a href="{{ '/' | relative_url }}"
+               class="{% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">Overview</a>
+            <a href="{{ '/architecture.html' | relative_url }}"
+               class="{% if page.url contains 'architecture' %}active{% endif %}">Architecture</a>
+            <a href="{{ '/installation.html' | relative_url }}"
+               class="{% if page.url contains 'installation' %}active{% endif %}">Installation</a>
+            <a href="{{ '/demo.html' | relative_url }}"
+               class="{% if page.url contains 'demo' %}active{% endif %}">Demo</a>
+            <a href="{{ '/publications.html' | relative_url }}"
+               class="{% if page.url contains 'publications' %}active{% endif %}">Publications</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="content-box markdown-body">
+        {{ content }}
+    </div>
+</main>
+
+<footer>
+    RevDebug-MPI Project &copy; {{ 'now' | date: "%Y" }} &bull; University of Tartu & Sharif University of Technology
+</footer>
+
+</body>
+</html>

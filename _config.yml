@@ -1,11 +1,3 @@
-theme: minima
 title: "RevDebug-MPI"
 description: "Causally Consistent Reversible Debugger for MPI Applications with Multi-Level and Incremental Checkpointing"
-header_pages:
-  - index.md
-  - architecture.md
-  - installation.md
-  - demo.md
-  - publications.md
-
 markdown: kramdown
