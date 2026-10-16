@@ -4,113 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | {{ site.title }}</title>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown.min.css">
     <style>
-        :root {
-            --bg-color: #f1f5f9;
-            --card-bg: #ffffff;
-            --nav-bg: #0f172a;
-            --nav-text: #94a3b8;
-            --active-tab-bg: #334155;
-            --active-tab-text: #ffffff;
-            --primary: #2563eb;
+        * {
+            box-sizing: border-box;
         }
-
         body {
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
+            background-color: #f1f5f9;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: #1e293b;
+            color: #0f172a;
+            line-height: 1.6;
         }
 
         header {
-            background-color: var(--nav-bg);
-            color: white;
+            background-color: #0f172a;
             padding: 0 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
         .nav-container {
-            max-width: 1050px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 64px;
+            height: 60px;
         }
-
         .brand {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            color: #f8fafc;
+            color: #ffffff;
             text-decoration: none;
-            letter-spacing: -0.5px;
         }
-
         nav {
             display: flex;
-            gap: 6px;
+            gap: 8px;
         }
-
         nav a {
-            color: var(--nav-text);
+            color: #94a3b8;
             text-decoration: none;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             font-weight: 500;
-            padding: 8px 14px;
+            padding: 7px 12px;
             border-radius: 6px;
-            transition: all 0.2s ease;
+            transition: background 0.2s, color 0.2s;
         }
-
         nav a:hover {
             color: #ffffff;
-            background-color: rgba(255, 255, 255, 0.08);
+            background: rgba(255,255,255,0.08);
         }
-
         nav a.active {
-            background-color: var(--active-tab-bg);
-            color: var(--active-tab-text);
+            background-color: #334155;
+            color: #ffffff;
             font-weight: 600;
         }
 
         main {
-            max-width: 1050px;
-            margin: 35px auto 60px auto;
-            padding: 0 20px;
+            max-width: 1100px;
+            margin: 30px auto 60px auto;
+            padding: 0 16px;
         }
-
-        .content-box {
-            background: var(--card-bg);
-            padding: 45px 55px;
-            border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-            border: 1px solid #e2e8f0;
-        }
-
-        .markdown-body pre {
-            background-color: #0f172a !important;
+        .content-card {
+            background: #ffffff;
+            padding: 40px 50px;
             border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            color: #0f172a;
+        }
+
+        h1, h2, h3, h4 {
+            color: #0f172a;
+            font-weight: 700;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            font-size: 1.85rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        h2 {
+            font-size: 1.4rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 6px;
+        }
+        p, li {
+            color: #1e293b;
+            font-size: 1rem;
+        }
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        pre {
+            background-color: #0f172a !important;
+            color: #f8fafc !important;
             padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: Consolas, Monaco, "Courier New", monospace;
+            font-size: 0.9rem;
             border: 1px solid #1e293b;
         }
+        code {
+            background-color: #e2e8f0;
+            color: #0f172a;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-family: Consolas, Monaco, monospace;
+        }
+        pre code {
+            background-color: transparent !important;
+            color: #f8fafc !important;
+            padding: 0;
+        }
 
-        .markdown-body img {
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        blockquote {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            margin: 1.5em 0;
+            padding: 12px 18px;
+            color: #92400e;
+            border-radius: 0 6px 6px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        th, td {
             border: 1px solid #cbd5e1;
-            margin: 15px 0;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-weight: 600;
+        }
+        tr:nth-child(even) td {
+            background-color: #f8fafc;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            margin: 12px 0;
+            display: block;
         }
 
         footer {
             text-align: center;
-            padding: 25px;
-            font-size: 0.85rem;
+            padding: 20px;
             color: #64748b;
+            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -118,30 +177,25 @@
 
 <header>
     <div class="nav-container">
-        <a href="{{ '/' | relative_url }}" class="brand">RevDebug-MPI</a>
+        <a href="{{ site.baseurl }}/" class="brand">RevDebug-MPI</a>
         <nav>
-            <a href="{{ '/' | relative_url }}"
-               class="{% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">Overview</a>
-            <a href="{{ '/architecture.html' | relative_url }}"
-               class="{% if page.url contains 'architecture' %}active{% endif %}">Architecture</a>
-            <a href="{{ '/installation.html' | relative_url }}"
-               class="{% if page.url contains 'installation' %}active{% endif %}">Installation</a>
-            <a href="{{ '/demo.html' | relative_url }}"
-               class="{% if page.url contains 'demo' %}active{% endif %}">Demo</a>
-            <a href="{{ '/publications.html' | relative_url }}"
-               class="{% if page.url contains 'publications' %}active{% endif %}">Publications</a>
+            <a href="{{ site.baseurl }}/" class="{% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">Overview</a>
+            <a href="{{ site.baseurl }}/architecture" class="{% if page.url contains 'architecture' %}active{% endif %}">Architecture</a>
+            <a href="{{ site.baseurl }}/installation" class="{% if page.url contains 'installation' %}active{% endif %}">Installation</a>
+            <a href="{{ site.baseurl }}/demo" class="{% if page.url contains 'demo' %}active{% endif %}">Demo</a>
+            <a href="{{ site.baseurl }}/publications" class="{% if page.url contains 'publications' %}active{% endif %}">Publications</a>
         </nav>
     </div>
 </header>
 
 <main>
-    <div class="content-box markdown-body">
+    <div class="content-card">
         {{ content }}
     </div>
 </main>
 
 <footer>
-    RevDebug-MPI Project &copy; {{ 'now' | date: "%Y" }} &bull; University of Tartu & Sharif University of Technology
+    RevDebug-MPI Project &copy; {{ 'now' | date: "%Y" }}
 </footer>
 
 </body>

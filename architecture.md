@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Architecture & Features
-permalink: /architecture.html
+title: Architecture
+permalink: /architecture/
 ---
 
 # System Architecture & New Features
